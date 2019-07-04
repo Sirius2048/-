@@ -15,16 +15,16 @@ void setup()
 }
 
 int income=0;
-digitalWrite(13, LOW);
-digitalWrite(12, LOW);
-digitalWrite(7, LOW);
-digitalWrite(4, LOW);
+
 void loop()
 {
   if(Serial.available()>0)
     {
       income=Serial.read();
-        
+      digitalWrite(13, LOW);
+      digitalWrite(12, LOW);
+      digitalWrite(7, LOW);
+      digitalWrite(4, LOW);
         switch(income)
         {
           case 'f':
@@ -33,48 +33,48 @@ void loop()
             case 'b':
               backward();
               digitalWrite(7, HIGH);digitalWrite(4, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
               digitalWrite(7, HIGH);digitalWrite(4, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
               digitalWrite(7, HIGH);digitalWrite(4, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
               digitalWrite(7, HIGH);digitalWrite(4, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
               digitalWrite(7, HIGH);digitalWrite(4, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(4, LOW);delay(100); 
               break;
             case 'l':
               left();
               digitalWrite(7, HIGH);digitalWrite(13, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
               digitalWrite(7, HIGH);digitalWrite(13, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
-            digitalWrite(7, HIGH);digitalWrite(13, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
               digitalWrite(7, HIGH);digitalWrite(13, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
               digitalWrite(7, HIGH);digitalWrite(13, HIGH);delay(100);
-            digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
+              digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
+              digitalWrite(7, HIGH);digitalWrite(13, HIGH);delay(100);
+              digitalWrite(7, LOW);digitalWrite(13, LOW);delay(100); 
               break;
             case 'r':
               right();
-                digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
-            digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100);
-            digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
-            digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100); 
               digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
-            digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100); 
-            digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
-            digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100); 
-            digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
-            digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100); 
+              digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100);
+              digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
+              digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100); 
+              digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
+              digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100); 
+              digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
+              digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100); 
+              digitalWrite(4, HIGH);digitalWrite(12, HIGH);delay(100);
+              digitalWrite(4, LOW);digitalWrite(12, LOW);delay(100); 
               break;
             case 's':
               stop();
               digitalWrite(7, HIGH);digitalWrite(4, HIGH);delay(9999);
              
               break;
-            default:
+              default:
               break;
         }
     }
